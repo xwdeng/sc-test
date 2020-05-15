@@ -2,9 +2,13 @@ var screenshot = require('desktop-screenshot');
 const now = new Date();
 const secondsSinceEpoch = Math.round(now.getTime() / 1000);
 
-screenshot(`screenshot_${secondsSinceEpoch}.png`, function(error, complete) {
-    if(error)
-        console.log("Screenshot failed", error);
-    else
-        console.log("Screenshot succeeded");
+let i = 0;
+screenshot(`screenshot_${i}.png`, function(error, complete) {
+    if (error) {
+        
+    }
+    i++;
+    if (i === 6) {
+        i = 0;
+    }
 });
